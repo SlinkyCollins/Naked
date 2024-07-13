@@ -3,9 +3,15 @@ import avatar from "/src/assets/avatar.png";
 import SearchIcon from "/src/assets/searchIcon.svg";
 import shoppingBasketIcon from "/src/assets/round-shopping-basket.svg";
 import "./Header.css";
+import { useLocation } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const Header = () => {
     const [isScrolled, setIsScrolled] = useState(false);
+    const location = useLocation();
+
+    const isAddToCartPage = location.pathname === "/addtocart";
+
 
     useEffect(() => {
         const handleScroll = () => {
@@ -24,9 +30,9 @@ const Header = () => {
     }, []);
 
     return (
-        <div className={`header-container ${isScrolled ? 'scrolled' : ''}`}>
+        <div className={`header-container ${isScrolled ? 'scrolled' : ''}`} style={{ background: isAddToCartPage ? "rgba(60, 44, 32, 1)" : "rgba(101, 87, 77, 0.2)", position: isAddToCartPage ? "static" : "fixed" }}>
             <div>
-                <h2 className="header-title">N A K E D</h2>
+                <h2 className="header-title"><NavLink to="/">N A K E D</NavLink></h2>
             </div>
 
             <div className="header-nav">

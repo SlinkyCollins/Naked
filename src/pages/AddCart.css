@@ -1,0 +1,86 @@
+.color-select {
+    display: flex;
+    align-items: center;
+  }
+  
+  .color-select span {
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    cursor: pointer;
+    border: 1px solid #808285;
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px #fff, 0 0 0 5px rgba(0, 0, 0, 0.3);
+    margin: 0.5rem 1.5rem 0 0.3rem;
+  }
+  
+  .color-1 {
+    background-color: #70412f;
+  }
+  
+  .color-2 {
+    background-color: #000;
+  }
+  
+  .color-3 {
+    background-color: #d4a078;
+  }
+  
+  .color-select input {
+    display: none;
+  }
+  
+  .color-select input:checked + span {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 3px #fff, 0 0 0 5px #000;
+  }
+  
+  
+  
+  .size-select {
+    display: flex;
+    gap: 1rem;
+    margin: .5rem 0;
+  }
+  
+  .size-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .size-label input[type="radio"] {
+    display: none;
+  }
+  
+  .size-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px; /* Adjust size as needed */
+    height: 40px; /* Adjust size as needed */
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.36);
+    background-color: #fff;
+    color: #0000005c;
+    font-weight: 700;
+    text-align: center;
+    line-height: 40px; /* Make sure this matches the height for vertical centering */
+    /* transition: color 0.3s; */
+  }
+  
+  .size-label input[type="radio"]:checked + .size-circle {
+    color: #000;
+    border: 2px solid rgba(0, 0, 0, 1);
+  }
+
+  .filtered-product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 0 auto;
+    padding: 0;
+    margin: 0;
+  }
+  
+  
