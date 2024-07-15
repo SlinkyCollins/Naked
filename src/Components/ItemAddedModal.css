@@ -1,0 +1,48 @@
+.color-select {
+    display: flex;
+    align-items: center;
+  }
+  
+  .color-select span {
+    display: inline-block;
+    width: 1.3rem;
+    height: 1.3rem;
+    cursor: pointer;
+    border: 1px solid #808285;
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px #fff, 0 0 0 5px rgba(0, 0, 0, 0.3);
+    margin: 0 1rem 0 .3rem;
+  }
+  
+  .color-1 {
+    background-color: #70412f;
+  }
+  
+  .color-2 {
+    background-color: #000;
+  }
+  
+  .color-3 {
+    background-color: #d4a078;
+  }
+  
+  .color-select input {
+    display: none;
+  }
+  
+  .color-select input:checked + span {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 3px #fff, 0 0 0 5px #000;
+  }
+
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.65);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }

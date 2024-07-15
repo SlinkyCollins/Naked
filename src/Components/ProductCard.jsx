@@ -2,8 +2,8 @@ import likeIcon from "/src/assets/likeIcon.svg";
 
 const ProductCard = ({productImg, productName, productPrice, onClick  }) => {
     return (
-        <div onClick={onClick} style={{maxWidth: "365px", width: "100%", position: "relative"}}>
-            <img src={productImg} alt="" style={{width: "100%", cursor: "pointer"}} title="Click to view details" />
+        <div style={{maxWidth: "365px", width: "100%", position: "relative"}}>
+            <img src={productImg} onClick={onClick} alt="" style={{width: "100%", cursor: "pointer"}} title="Click to view details" />
             <div style={{position: "absolute", right: "0", top: "0", margin: "1rem 1rem 0 0"}}>
                 <img src={likeIcon} alt="" style={{background: "#fff", padding: "7px", borderRadius: "50%", cursor: "pointer"}} />
             </div>

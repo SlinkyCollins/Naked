@@ -47,10 +47,6 @@ const AddToCart = () => {
 
   return (
     <div>
-      <div style={{ background: "rgba(232, 210, 186, 1)", width: "100%", textAlign: "center", padding: "1rem" }}>
-        <p style={{ fontWeight: "700", fontSize: "14px", color: "#3f2d21" }}>Free shipping on orders above $200</p>
-      </div>
-
       {product ?
         (
           <div style={{display: "flex", flexDirection: "column"}}>
