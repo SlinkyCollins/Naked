@@ -1,8 +1,17 @@
+import { useEffect } from "react";
 import image from "/src/assets/Rectangle 81.png";
 import addIcon from "/src/assets/add.jpg";
 import subtractIcon from "/src/assets/subtract.svg";
+import { Link } from "react-router-dom";
+
 
 const CartPage = () => {
+
+  // Scroll to the top when the component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div style={{ display: "flex", padding: "6rem 3rem", backgroundColor: "#F6F6F5", gap: "2rem" }}>
 
@@ -94,8 +103,8 @@ const CartPage = () => {
         </div>
 
         <div style={{display: "flex", flexDirection: "column", alignItems: "center"}}>
-          <button style={{ width: "95%", outline: "none", background: "#3f2d21", color: "#E8D2BA", border: "1.39px solid #3f2d21", borderRadius: "7px", padding: "1rem 2rem", cursor: "pointer", fontSize: "14px", fontWeight: "500" }}>Proceed to Checkout</button>
-          <button style={{ width: "95%", outline: "none", background: "transparent", color: "#3F2D21", border: "none", padding: "1rem 2rem", cursor: "pointer", fontSize: "14px", fontWeight: "500", textDecoration: "underline" }}>Continue Shopping</button>
+        <Link to="/checkout" style={{width: "95%"}}><button style={{ width: "100%", outline: "none", background: "#3f2d21", color: "#E8D2BA", border: "1.39px solid #3f2d21", borderRadius: "7px", padding: "1rem 2rem", cursor: "pointer", fontSize: "14px", fontWeight: "500" }}>Proceed to Checkout</button></Link>
+          <Link to="/" style={{width: "95%"}}><button style={{ width: "100%", outline: "none", background: "transparent", color: "#3F2D21", border: "none", padding: "1rem 2rem", cursor: "pointer", fontSize: "14px", fontWeight: "500", textDecoration: "underline" }}>Continue Shopping</button></Link>
         </div>
 
       </div>

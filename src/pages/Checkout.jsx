@@ -3,9 +3,16 @@ import image from "/src/assets/Rectangle 81.png";
 import user from "/src/assets/User.svg";
 import edit from "/src/assets/penEdit.svg";
 import locationIcon from "/src/assets/locationIcon.svg";
+import { useEffect } from "react";
 
 
 const Checkout = () => {
+  
+  // Scroll to the top when the component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div style={{ display: "flex", backgroundColor: "#F6F6F5" }}>
 

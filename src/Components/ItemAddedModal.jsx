@@ -2,8 +2,9 @@ import tick from "/src/assets/Tick.svg";
 import close from "/src/assets/close.png";
 import image from "/src/assets/Rectangle 81.png";
 import "./ItemAddedModal.css";
+import { Link } from "react-router-dom";
 
-const ItemAddedModal = () => {
+const ItemAddedModal = ({ onClose }) => {
     return (
         <div className="modal-overlay">
             <div style={{ backgroundColor: "#fff", padding: "2rem 3rem 2rem", width: "100%", maxWidth: "35rem", margin: "10rem auto", borderRadius: "13px" }}>
@@ -14,7 +15,7 @@ const ItemAddedModal = () => {
                     </div>
 
                     <div>
-                        <img src={close} alt="" style={{cursor: "pointer"}} />
+                        <img src={close} alt="" style={{ cursor: "pointer" }} onClick={onClose} />
                     </div>
                 </div>
 
@@ -65,8 +66,8 @@ const ItemAddedModal = () => {
                 </div>
 
                 <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
-                    <button style={{ width: "100%", outline: "none", background: "transparent", color: "#3f2d21", border: "1.39px solid #3f2d21", borderRadius: "7px", padding: "1rem 2rem", cursor: "pointer", fontSize: "1rem", fontWeight: "600" }}>View cart (1)</button>
-                    <button style={{ width: "100%", outline: "none", background: "#3f2d21", color: "#fff", border: "1.39px solid #3f2d21", borderRadius: "7px", padding: "1rem 2rem", cursor: "pointer", fontSize: "1rem", fontWeight: "600" }}>Check out</button>
+                    <Link to="/cart"><button style={{ width: "100%", outline: "none", background: "transparent", color: "#3f2d21", border: "1.39px solid #3f2d21", borderRadius: "7px", padding: "1rem 2rem", cursor: "pointer", fontSize: "1rem", fontWeight: "600" }}>View cart (1)</button></Link>
+                    <Link to="/checkout"><button style={{ width: "100%", outline: "none", background: "#3f2d21", color: "#fff", border: "1.39px solid #3f2d21", borderRadius: "7px", padding: "1rem 2rem", cursor: "pointer", fontSize: "1rem", fontWeight: "600" }}>Check out</button></Link>
                 </div>
             </div>
         </div>

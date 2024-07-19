@@ -13,6 +13,7 @@ import frame10 from "/src/assets/Frame 255.png";
 import frame11 from "/src/assets/Frame 256.png";
 import frame12 from "/src/assets/Frame 257.png";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 
 const products = [
@@ -37,6 +38,11 @@ const Body = () => {
     console.log("Product clicked:", product); // Debugging log
     navigate("/addtocart", { state: { product, products  } });
   };
+
+  // Scroll to the top when the component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>

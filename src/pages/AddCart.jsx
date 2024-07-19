@@ -7,12 +7,14 @@ import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import ProductCard from "/src/Components/ProductCard.jsx";
 import { useEffect } from "react"; // Import useEffect
+import ItemAddedModal from "../Components/ItemAddedModal";
 
 const AddToCart = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const { product, products } = location.state || {};
   const [isAdding, setIsAdding] = useState(1);
+  const [showModal, setShowModal] = useState(false);
   let adder = isAdding;
 
   const handleProductClick = (product) => {
@@ -35,6 +37,14 @@ const AddToCart = () => {
       adder = 1;
     }
     setIsAdding(adder);
+  };
+
+  const openModal = () => {
+    setShowModal(true);
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
   };
 
   // Filter out the current product
@@ -142,7 +152,7 @@ const AddToCart = () => {
                     <img src={darkLikeIcon} alt="" style={{ width: "25px", height: "25px", cursor: "pointer" }} />
                   </div>
                   <div>
-                    <button style={{ backgroundColor: "rgba(63, 45, 33, 1)", cursor: "pointer", outline: "none", padding: "1rem 4.5rem", border: "none", borderRadius: "10px", color: "#e8d2ba", display: "flex", alignItems: "center", justifyContent: "center", gap: "1rem", textAlign: "center", fontSize: "1.375rem", fontWeight: "600" }}><img src={shoppingBacketIconWithoutNotification} style={{ width: "30px", height: "30px" }} />Add To Cart</button>
+                    <button onClick={openModal} style={{ backgroundColor: "rgba(63, 45, 33, 1)", cursor: "pointer", outline: "none", padding: "1rem 4.5rem", border: "none", borderRadius: "10px", color: "#e8d2ba", display: "flex", alignItems: "center", justifyContent: "center", gap: "1rem", textAlign: "center", fontSize: "1.375rem", fontWeight: "600" }}><img src={shoppingBacketIconWithoutNotification} style={{ width: "30px", height: "30px" }} />Add To Cart</button>
                   </div>
                 </div>
               </div>
@@ -163,6 +173,8 @@ const AddToCart = () => {
                 ))}
               </div>
             </div>
+
+            {showModal && <ItemAddedModal onClose={closeModal} />}
           </div>
         )
         :
